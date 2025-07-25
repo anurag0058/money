@@ -52,16 +52,7 @@ ims-backend/
 
 ---
 
-## 📦 Environment Variables
 
-Before starting, create a `.env` file in the root directory and add the following:
-
-```env
-PORT=8080
-MONGO_URI=mongodb+srv://anuragsingh:7393034944@cluster0.biwsjij.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
-JWT_SECRET=supersecuresecretkey
-
----
 
 ## 🚀 Getting Started
 

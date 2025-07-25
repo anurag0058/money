@@ -1,28 +1,28 @@
 # Inventory Management System (IMS) - Backend
 
-This project is a simple backend for managing product inventory with user authentication using **Node.js**, **Express**, **MongoDB**, and **JWT**.
-
+This backend application provides a secure and functional interface to manage product inventories along with user login capabilities. Built with **Node.js**, **Express**, and **MongoDB**, it includes JWT-based authentication and well-documented APIs using Swagger.
 ---
 
 ## ✅ Features
 
-- User Registration and Login (JWT Authentication)
-- Add Products
-- Update Product Quantity
-- Get Products (with pagination)
-- Swagger API documentation
-- Postman collection for testing
+- 🔐 Secure user registration & login using JWT
+- 📦 Add and manage product details including inventory count
+- ✏️ Update stock levels dynamically
+- 📃 Retrieve a paginated list of available items
+- 📚 Built-in Swagger documentation
+- 📮 Postman collection for quick testing
+
 
 ---
 
 ## 🛠 Tech Stack
 
-- Node.js
-- Express.js
-- MongoDB (with Mongoose)
-- JWT for Auth
-- dotenv for environment variables
-- Swagger for API documentation
+- **Runtime**: Node.js
+- **Framework**: Express.js
+- **Database**: MongoDB (Mongoose ORM)
+- **Auth**: JSON Web Tokens (JWT)
+- **Environment Management**: dotenv
+- **API Docs**: Swagger (OpenAPI)
 
 ---
 
@@ -30,21 +30,21 @@ This project is a simple backend for managing product inventory with user authen
 
 ```
 ims-backend/
-├── app.js
+├── server.js
 ├── .env
 ├── controllers/
-│   ├── authController.js
-│   └── productController.js
+│   ├── userHandler.js
+│   └── inventoryHandler.js
 ├── models/
-│   ├── User.js
-│   └── Product.js
+│   ├── UserSchema.js
+│   └── ItemSchema.js
 ├── middlewares/
 │   └── authMiddleware.js
 ├── routes/
-│   ├── authRoutes.js
-│   └── productRoutes.js
+│   ├── userAuth.js
+│   └── itemRoutes.js
 ├── config/
-│   └── db.js
+│   └── connection.js
 ├── swagger.js
 ├── README.md
 └── postman_collection.json
@@ -54,12 +54,12 @@ ims-backend/
 
 ## 📦 Environment Variables
 
-Create a `.env` file in the root directory with:
+Before starting, create a `.env` file in the root directory and add the following:
+
 ```env
 PORT=8080
-MONGO_URI=mongodb+srv://<username>:<password>@cluster0.mongodb.net/ims_db?retryWrites=true&w=majority
-JWT_SECRET=your_jwt_secret
-```
+MONGO_URI=mongodb+srv://anuragsingh:7393034944@cluster0.biwsjij.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+JWT_SECRET=supersecuresecretkey
 
 ---
 
@@ -109,9 +109,11 @@ Use the Postman collection provided:
 📁 `IMS_Postman_Collection.json`
 
 Steps:
-1. Import into Postman
-2. Register & login to get token
-3. Use token as `Bearer <token>` in Authorization header
+Import the provided collection postman_collection.json
+
+Register a new user or login with existing credentials
+
+Use the JWT token from login in the Authorization header:
 
 ---
 

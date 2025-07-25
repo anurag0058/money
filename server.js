@@ -1,9 +1,9 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import { connectDB } from "./config/db.js";
-import authRoutes from "./routes/authRoutes.js";
-import productRoutes from "./routes/productRoutes.js";
+import { connectDB } from "./config/connection.js";
+import authRoutes from "./routes/userAuth.js";
+import productRoutes from "./routes/itemRoutes.js";
 import { swaggerDocs } from "./swagger.js";
 
 dotenv.config();

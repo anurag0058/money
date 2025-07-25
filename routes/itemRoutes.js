@@ -3,7 +3,7 @@ import {
   addProduct,
   updateQuantity,
   getProducts,
-} from "../controllers/productController.js";
+} from "../controllers/inventoryHandler.js";
 import { verifyToken } from "../middlewares/authMiddleware.js";
 
 const router = express.Router();
